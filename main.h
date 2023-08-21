@@ -96,7 +96,7 @@ int print_octal(va_list ap, params_t *params);
 /* simple_printers.c module */
 int print_form_to(char *start, char *stop, char *except);
 int print_rev(va_list ap, params_t *params);
-int print_rotl3(va_list ap, params_t *params);
+int print_rot13(va_list ap, params_t *params);
 
 /* print_number.c model */
 int _isdigit(int c);
