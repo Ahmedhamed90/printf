@@ -24,7 +24,7 @@ char *convert(long int num, int base, int flags, params_t *params)
 		n = -num;
 		sign = '-';
 	}
-	array = flags & CONVERT_UNSIGNED ? "0123456789abcdef" : "0123456789ABCDEF";
+	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
 	ptr = &buffer[49];
 	*ptr = '\0';
 
@@ -32,6 +32,7 @@ char *convert(long int num, int base, int flags, params_t *params)
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
+
 	if (sign)
 		*--ptr = sign;
 	return (ptr);
@@ -69,7 +70,7 @@ int print_unsigned(va_list ap, params_t *params)
  */
 int print_address(va_list ap, params_t *params)
 {
-	unsigned long int n = va_arg(ap, unsigned lomg int);
+	unsigned long int n = va_arg(ap, unsigned long int);
 	char *str;
 
 	if (!n)
