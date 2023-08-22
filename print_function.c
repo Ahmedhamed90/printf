@@ -15,7 +15,7 @@ int print_char(va_list ap, params_t *params)
 
 	if (params->minus_flag)
 		sum += _putchar(ch);
-	while (pad++ < params-width)
+	while (pad++ < params->width)
 		sum += _putchar(pad_char);
 	if (!params->minus_flag)
 		sum += _putchar(ch);
@@ -34,7 +34,7 @@ int print_int(va_list ap, params_t *params)
 {
 	long l;
 
-	if (params->ll_modifier)
+	if (params->l_modifier)
 		l = va_arg(ap, long);
 	else if (params->h_modifier)
 		l = (short int)va_arg(ap, int);
@@ -55,14 +55,14 @@ int print_string(va_list ap, params_t *params)
 {
 	char *str = va_arg(ap, char *), pad_char = ' ';
 	unsigned int pad = 0, sum = 0, i = 0, j;
-
 	(void)params;
+
 	switch ((int)(!str))
-	case 1:
-		str = NULL_STRING;
+		case 1:
+			str = NULL_STRING;
 
 	j = pad = _strlen(str);
-	if (params->precision <pad)
+	if (params->precision < pad)
 		j = pad = params->precision;
 
 	if (params->minus_flag)
