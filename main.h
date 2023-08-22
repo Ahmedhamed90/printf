@@ -14,8 +14,8 @@
 
 #define PARAMS_INIT{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
-#define CONVERT_LOWRCASE
-#define CONVERT_UNSIGNED
+#define CONVERT_LOWRCASE	1
+#define CONVERT_UNSIGNED	2
 
 /**
  * struct parameters - parameters struct
@@ -37,7 +37,7 @@
  */
 typedef struct parameters
 {
-	unsigned int unsign			: 1;
+	unsigned int unsign		: 1;
 
 	unsigned int plus_flag		: 1;
 	unsigned int space_flag		: 1;
