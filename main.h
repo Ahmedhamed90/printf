@@ -60,7 +60,7 @@ typedef struct parameters
  */
 typedef struct specifier
 {
-	char *pecifier;
+	char *specifier;
 	int (*f)(va_list, params_t *);
 } specifier_t;
 
