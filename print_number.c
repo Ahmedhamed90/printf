@@ -52,7 +52,7 @@ int print_number(char *str, params_t *params)
 		while (i++ < params->precision)
 			*--str = '0';
 	if (neg)
-		*--str ='-';
+		*--str = '-';
 
 	if (!params->minus_flag)
 		return (print_number_right_shift(str, params));
